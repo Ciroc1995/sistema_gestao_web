@@ -1,0 +1,20 @@
+{% extends 'animes/base.html' %}
+{% block conteudo %}
+<div class="container">
+    <h1 style="text-align: center;">Detalhes do anime</h1>
+    <table class="table table-hover table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Anime</th>
+            <th>Status</th>
+            <th>Resenha</th>
+        </tr>
+        <tr>
+            <td>{{dados.id}}</td>
+            <td>{{dados.anime}}</td>
+            <td>{{dados.status}}</td>
+            <td>{{dados.resenha}}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'animes/base.html' %}
+{% block conteudo %}
+{% load crispy_forms_tags %}
+<div class="container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h1>Cadastro Novo Usuário</h1>
+        {{formulario | crispy}}
+        <button class="btn btn-primary" type="submit">Criar novo usuário</button>
+        <button class="btn btn-default"><a href="{% url 'login' %}">Já possui conta? clique aqui</a></button>
+    </form>
+</div>
+{% endblock %}

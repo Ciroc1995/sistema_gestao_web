@@ -1,0 +1,12 @@
+{% extends 'animes/base.html' %}
+{% block conteudo %}
+{% load crispy_forms_tags %}
+<div class="container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h1>Criar novo anime</h1>
+        {{anime_form | crispy}}
+        <button type="submit">Confirmar</button>
+    </form>
+</div>
+{% endblock %}

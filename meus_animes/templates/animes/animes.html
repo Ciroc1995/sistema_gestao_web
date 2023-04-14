@@ -1,0 +1,33 @@
+{% extends 'animes/base.html' %}
+{% block conteudo %}
+<div class="container">
+    <h1 style="text-align: center;">Meus Animes - Cicero Cordeiro</h1>
+    <button style="margin-bottom: 15px;" class="btn btn-success"><a style="color: white;"
+            href="{% url 'novo_anime' %}">Novo Anime</a></button>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Id</th>
+            <th>Anime</th>
+            <th>Status</th>
+            <th>Resenha</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for dado in dados %}
+        <tr>
+            <td>{{dado.id}}</td>
+            <td>{{dado.anime}}</td>
+            <td>{{dado.status}}</td>
+            <td>{{dado.resenha}}</td>
+            <td><button class="btn btn-info"><a style="color: white;"
+                        href="{% url 'detalhe' dado.id %}">Detalhe</a></button></td>
+            <td><button class="btn btn-warning"><a style="color: white;"
+                        href="{% url 'editar' dado.id %}">Editar</a></button></td>
+            <td><button class="btn btn-danger"><a style="color: white;"
+                        href="{% url 'excluir' dado.id %}">Excluir</a></button></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
