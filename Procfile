@@ -1,0 +1,1 @@
+web: gunicorn projeto_meus_animes.wsgi
